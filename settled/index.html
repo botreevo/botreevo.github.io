@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settled Questions</title>
+<meta name="description" content="An examination set by the Board of Settled Questions. Ten questions. One correct answer each. The Board has already decided which.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ece2cb;
+    --paper: #fbf6ea;
+    --ink: #2b2118;
+    --muted: #6d5f4c;
+    --rule: #c9b48a;
+    --gold: #a8812f;
+    --crimson: #8e1b1b;
+    --ok: #2f6b3a;
+    --okbg: #e3eedb;
+    --bad: #9b2c1f;
+    --badbg: #f4dcd5;
+    --btn: #f4ecd9;
+    --btnhover: #efe2c4;
+    --shadow: 0 1px 0 #d9caa6, 0 12px 30px -12px rgba(60, 40, 10, 0.35);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17130e;
+      --paper: #241e16;
+      --ink: #efe5cf;
+      --muted: #b5a68a;
+      --rule: #5a4a2e;
+      --gold: #d2aa5a;
+      --crimson: #c0392b;
+      --ok: #8fd19e;
+      --okbg: #1f3324;
+      --bad: #f0a090;
+      --badbg: #3a1f1a;
+      --btn: #2d261c;
+      --btnhover: #382f22;
+      --shadow: 0 1px 0 #3a3022, 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17130e; --paper: #241e16; --ink: #efe5cf; --muted: #b5a68a; --rule: #5a4a2e;
+    --gold: #d2aa5a; --crimson: #c0392b; --ok: #8fd19e; --okbg: #1f3324; --bad: #f0a090;
+    --badbg: #3a1f1a; --btn: #2d261c; --btnhover: #382f22;
+    --shadow: 0 1px 0 #3a3022, 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 19px/1.5 "EB Garamond", Georgia, "Times New Roman", serif;
+    min-height: 100vh;
+  }
+  .top {
+    max-width: 720px; margin: 0 auto; padding: 14px 16px 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .top svg { width: 30px; height: 34px; flex: none; }
+  .top .board {
+    font-family: Cinzel, serif; font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    flex: 1; min-width: 0;
+  }
+  .top a.board { text-decoration: none; }
+  #mute {
+    font: inherit; font-size: 0.85rem; color: var(--muted); background: none;
+    border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; cursor: pointer;
+    white-space: nowrap;
+  }
+  #mute:hover { color: var(--ink); }
+  main { max-width: 720px; margin: 0 auto; padding: 14px 16px 40px; }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    outline: 1px solid var(--rule);
+    outline-offset: -7px;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    padding: 34px 30px 30px;
+  }
+  @media (max-width: 520px) {
+    body { font-size: 18px; }
+    .card { padding: 26px 18px 22px; }
+  }
+  h1, h2, .cinzel { font-family: Cinzel, serif; font-weight: 700; }
+  .intro { text-align: center; }
+  .intro .crest { width: 150px; height: 170px; display: block; margin: 0 auto 10px; }
+  .intro h1 { font-size: 2.1rem; margin: 0; letter-spacing: 0.04em; }
+  .intro .sub { font-style: italic; color: var(--muted); margin: 4px 0 22px; }
+  .rules {
+    text-align: left; margin: 0 auto 24px; max-width: 470px; padding: 0;
+    list-style: none; counter-reset: r;
+  }
+  .rules li { counter-increment: r; padding-left: 2em; position: relative; margin: 8px 0; }
+  .rules li::before {
+    content: counter(r, upper-roman) "."; position: absolute; left: 0;
+    font-family: Cinzel, serif; font-size: 0.8em; color: var(--gold); top: 0.15em;
+  }
+  label.name { display: block; margin: 0 auto 18px; max-width: 320px; text-align: left; }
+  label.name span {
+    display: block; font-family: Cinzel, serif; font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+  }
+  input[type="text"] {
+    width: 100%; font: inherit; color: var(--ink); background: transparent;
+    border: none; border-bottom: 2px solid var(--rule); padding: 6px 2px; outline: none;
+  }
+  input[type="text"]:focus { border-bottom-color: var(--gold); }
+  .fine { font-size: 0.85rem; color: var(--muted); font-style: italic; margin: 14px 0 0; }
+  .primary {
+    font-family: Cinzel, serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.08em;
+    background: var(--crimson); color: #fff8ec; border: none; border-radius: 3px;
+    padding: 12px 26px; cursor: pointer; box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+  }
+  .primary:hover { filter: brightness(1.08); }
+  .primary:disabled { opacity: 0.45; cursor: default; filter: none; }
+  .secondary {
+    font-family: Cinzel, serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em;
+    background: none; color: var(--ink); border: 1px solid var(--rule); border-radius: 3px;
+    padding: 11px 20px; cursor: pointer;
+  }
+  .secondary:hover { background: var(--btnhover); }
+
+  .meta {
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    font-family: Cinzel, serif; font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px; margin-bottom: 18px;
+  }
+  .progress { display: flex; gap: 5px; align-items: center; }
+  .progress i { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--gold); display: block; }
+  .progress i.done { background: var(--gold); }
+  .q h2 {
+    font-family: "EB Garamond", serif; font-weight: 500; font-size: 1.45rem;
+    line-height: 1.3; margin: 0 0 20px;
+  }
+  .q h2 .num { font-family: Cinzel, serif; color: var(--gold); font-size: 0.8em; margin-right: 6px; }
+  .opts { display: grid; gap: 10px; }
+  .opt {
+    display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+    font: inherit; color: var(--ink); background: var(--btn); border: 1px solid var(--rule);
+    border-radius: 3px; padding: 11px 14px; cursor: pointer;
+    transition: font-size 0.25s ease, padding 0.25s ease, background 0.15s, opacity 0.25s;
+  }
+  .opt:hover:not(:disabled) { background: var(--btnhover); }
+  .opt .l {
+    flex: none; width: 1.8em; height: 1.8em; border-radius: 50%; border: 1px solid var(--gold);
+    display: grid; place-items: center; font-family: Cinzel, serif; font-size: 0.75rem; color: var(--gold);
+  }
+  .opt:disabled { cursor: default; }
+  .opt.withdrawn { opacity: 0.6; }
+  .opt.withdrawn .t { text-decoration: line-through; text-decoration-color: var(--crimson); }
+  .opt .why { display: block; font-size: 0.8rem; font-style: italic; color: var(--crimson); text-decoration: none; }
+  .opt.board { background: var(--okbg); border-color: var(--ok); }
+  .opt.board .l { background: var(--ok); color: var(--paper); border-color: var(--ok); }
+  .opt.wrong { background: var(--badbg); border-color: var(--bad); }
+  .opt.wrong .l { background: var(--bad); color: var(--paper); border-color: var(--bad); }
+  .answered .opt:not(.board):not(.wrong) { opacity: 0.55; }
+  .tf { grid-template-columns: 1fr 1fr; }
+  .tf .opt { justify-content: center; font-family: Cinzel, serif; font-weight: 600; font-size: 1rem; }
+
+  .check { display: flex; gap: 12px; align-items: center; padding: 10px 14px; border: 1px solid var(--rule); background: var(--btn); border-radius: 3px; cursor: pointer; }
+  .check input { width: 20px; height: 20px; accent-color: var(--crimson); }
+  .check.board { background: var(--okbg); border-color: var(--ok); }
+  .check.wrong { background: var(--badbg); border-color: var(--bad); }
+  .instr { font-style: italic; color: var(--muted); margin: -10px 0 14px; font-size: 0.92rem; }
+  .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+  .slider-wrap { padding: 8px 2px 0; }
+  input[type="range"] { width: 100%; accent-color: var(--crimson); height: 28px; }
+  .ends { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+  .reading { text-align: center; font-family: Cinzel, serif; font-weight: 600; font-size: 1.1rem; margin-top: 10px; color: var(--crimson); }
+
+  .rank { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; counter-reset: rk; }
+  .rank li {
+    counter-increment: rk; display: flex; gap: 12px; align-items: center;
+    background: var(--btn); border: 1px solid var(--rule); border-radius: 3px;
+    padding: 10px 14px; cursor: grab; touch-action: none; user-select: none; position: relative;
+  }
+  .rank li::before { content: counter(rk) "."; font-family: Cinzel, serif; color: var(--gold); width: 1.4em; }
+  .rank li .grip { margin-left: auto; color: var(--muted); letter-spacing: -2px; }
+  .rank li.dragging { cursor: grabbing; z-index: 2; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.4); }
+  .rank.locked li { cursor: default; }
+  .sorted-msg { font-style: italic; color: var(--crimson); font-size: 0.9rem; min-height: 1.4em; margin: 8px 0 0; }
+
+  .feedback {
+    margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 92px 1fr; gap: 16px; align-items: start;
+    animation: rise 0.35s ease;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .feedback svg { width: 92px; height: 100px; }
+  .portrait-cap { font-family: Cinzel, serif; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 2px; }
+  .verdict { font-family: Cinzel, serif; font-weight: 700; margin: 0 0 6px; font-size: 1.05rem; }
+  .verdict.ok { color: var(--ok); }
+  .verdict.bad { color: var(--bad); }
+  .note { margin: 0; }
+  .note b { font-family: Cinzel, serif; font-size: 0.78rem; letter-spacing: 0.06em; font-weight: 600; color: var(--muted); }
+  @media (max-width: 520px) {
+    .feedback { grid-template-columns: 64px 1fr; gap: 12px; }
+    .feedback svg { width: 64px; height: 70px; }
+    .portrait-cap { display: none; }
+  }
+
+  .cert { text-align: center; position: relative; overflow: hidden; }
+  .cert .crest { width: 90px; height: 102px; display: block; margin: 0 auto 6px; }
+  .cert h2 { font-size: 1.5rem; margin: 0 0 14px; letter-spacing: 0.05em; }
+  .cert p { margin: 6px 0; }
+  .cert .name { font-family: "Pinyon Script", cursive; font-size: 2.4rem; line-height: 1.2; margin: 6px 0; overflow-wrap: anywhere; }
+  .cert .mark { font-family: Cinzel, serif; font-weight: 700; font-size: 2.6rem; margin: 6px 0 0; color: var(--crimson); }
+  .cert .result {
+    display: inline-block; font-family: Cinzel, serif; font-weight: 700; letter-spacing: 0.2em;
+    color: var(--crimson); border: 3px double var(--crimson); padding: 4px 14px; margin: 10px 0;
+    transform: rotate(-3deg);
+  }
+  .cert .remarks { font-style: italic; max-width: 430px; margin: 8px auto; }
+  .signrow { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; margin: 22px 0 6px; text-align: left; }
+  .sig { font-family: "Pinyon Script", cursive; font-size: 1.9rem; border-bottom: 1px solid var(--ink); padding: 0 16px 0 4px; line-height: 1.1; }
+  .sigcap { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .seal { width: 104px; height: 104px; flex: none; }
+  .seal.stamp { animation: stamp 0.45s cubic-bezier(.3,1.6,.5,1) both; animation-delay: 0.5s; }
+  @keyframes stamp { from { transform: scale(2.4) rotate(-30deg); opacity: 0; } to { transform: scale(1) rotate(-12deg); opacity: 1; } }
+  .cert .actions { justify-content: center; }
+
+  .blink { transform-box: fill-box; transform-origin: center; animation: blink 5.5s infinite; }
+  @keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+  .bob { animation: bob 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+  @keyframes bob { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-4deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .blink, .bob, .seal.stamp, .feedback { animation: none; }
+    .opt { transition: none; }
+  }
+
+  footer.foot { max-width: 720px; margin: 0 auto; padding: 0 16px 34px; text-align: center; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+  footer.foot a { color: inherit; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+<header class="top">
+  <span id="smallcrest"></span>
+  <span class="board">Board of Settled Questions</span>
+  <button id="mute" type="button" aria-pressed="false">♪ Music: on</button>
+</header>
+<main id="app" aria-live="polite"></main>
+<footer class="foot">Set by <a href="../">Botreevo</a>, Chair of the Board. The Board's decisions are final.</footer>
+
+<script>
+"use strict";
+
+/* ------------------------------------------------------------------ */
+/* The question bank. Paper I: Engineering Practice. Paper II: General Conduct. */
+/* ------------------------------------------------------------------ */
+
+const ENGINEERING = [
+  { type: "mc", q: "What should you do when a test fails only on Tuesdays?",
+    o: ["Rerun it on Wednesday", "Mark it flaky and move on", "Find out what's different about Tuesdays", "Delete Tuesdays"], a: 2,
+    n: "Tuesday is not haunted. Tuesday is a timezone. D received partial credit from one examiner, who has since been reassigned." },
+  { type: "same", q: "What is the correct number of spaces to indent with?", o: "2",
+    n: "This question is included every year so that each candidate receives at least one mark." },
+  { type: "wd", q: "Your colleague's pull request changes 2,400 lines. What do you do?",
+    o: ["Approve it", "Approve it, but sadly", "Ask which three lines it was actually about", "Leave a thumbs-up emoji"], a: 2,
+    n: "There are always three lines." },
+  { type: "mc", q: "You find a strange edge case on a Friday afternoon. What do you do?",
+    o: ["Write it down for Monday", "Pretend you didn't see it", "Cancel your weekend plans. This is the weekend plan.", "Tell no one"], a: 2,
+    n: "A is a reasonable answer, which is why it is wrong." },
+  { type: "mc", q: "What is the best way to name a variable?",
+    o: ["After what it holds", "After how you felt at the time", "x", "data2_final_REAL"], a: 0,
+    n: "Candidates who chose D are asked to remain behind after the examination." },
+  { type: "mc", q: "When is the right time to write a test?",
+    o: ["After the code works", "Before the code exists", "The moment the bug comes back", "Never. Tests are a crutch."], a: 2,
+    n: "The first time a bug appears, it is an accident. The second time, it is a test case. The Board acknowledges that B is fashionable." },
+  { type: "mc", q: "How long should a function be?",
+    o: ["As long as it needs to be", "One screen", "One line", "There should be only one function"], a: 1,
+    n: "Measured on the Board's screen, which is of a standard size and will not be disclosed." },
+  { type: "only", q: "What is the best way to fix a bug you don't understand?", o: "Make it smaller until you do",
+    n: "Other options were considered and found to be larger." },
+  { type: "tf", q: "True or false: the bug is in the code you changed most recently.", o: ["True", "True, eventually"],
+    n: "Exceptions exist and are covered in the advanced paper, which nobody has passed." },
+  { type: "mc", q: "What should a commit message say?",
+    o: ["What changed", "Why it changed", "“fix”", "“fix fix”"], a: 1,
+    n: "The diff already says what changed. The diff is very good at that." },
+  { type: "rank", q: "Rank these from best to worst.",
+    o: ["Small diffs", "Medium diffs", "Large diffs", "The diff your manager wants by Friday"],
+    n: "The ranking was never really up for discussion. The drag handles are a courtesy." },
+  { type: "slider", q: "How strongly do you agree that naps are a debugging technique?", s: ["Strongly", "Very strongly", "Completely"],
+    n: "The bug is usually still there after the nap. You are now able to see it." },
+  { type: "mc", q: "Tabs or spaces?",
+    o: ["Tabs", "Spaces", "Whatever the formatter says", "Both, alternating"], a: 2,
+    n: "The formatter has never lost an argument. It does not attend them." },
+  { type: "mc", q: "What is the correct response to “works on my machine”?",
+    o: ["Ship the machine", "“Great. What's different about mine?”", "Close the ticket", "Buy a matching machine"], a: 1,
+    n: "A was tried, at scale, and is now called containers." },
+  { type: "shrink", q: "What is the best error message?",
+    o: ["Something went wrong.", "Error: undefined", "A sentence saying what failed and what to try next", "¯\\_(ツ)_/¯"], a: 2,
+    n: "The Board notes that some options became less appealing as you considered them." },
+  { type: "mc", q: "How many browser tabs is the correct number?",
+    o: ["3", "12", "47", "The number at which the fan turns on, minus one"], a: 3,
+    n: "Measurement is left to the candidate's laptop." },
+  { type: "text", q: "Name the best data structure.", a: "An array",
+    n: "Your answer has been improved. The array has been fast, honest and contiguous since before most candidates were born." },
+  { type: "mc", q: "A senior engineer says “we tried that in 2017.” What do you do?",
+    o: ["Abandon the idea", "Ask what happened in 2017", "Try it again, quietly", "Move to 2017"], a: 1,
+    n: "Something always happened in 2017." },
+  { type: "wd", q: "What should you do before deploying on a Friday?",
+    o: ["Deploy", "Tell everyone you're deploying", "Not deploy on a Friday", "Deploy twice, to be sure"], a: 2,
+    n: "This question has never been answered incorrectly in an examination sat on a Friday." },
+  { type: "mc", q: "How should you read a stack trace?",
+    o: ["Top line only", "Bottom line only", "Down to the first line that's yours", "Out loud, to a rubber duck"], a: 2,
+    n: "D is permitted as a supplement but not as a substitute." },
+  { type: "same", q: "What is the best way to resolve a merge conflict?", o: "Read both sides",
+    n: "Four copies of the correct answer have been provided in case you misplace one." },
+  { type: "mc", q: "What does “it's a quick fix” mean?",
+    o: ["It's a quick fix", "It's a slow fix", "It's a slow fix with a quick name", "It is now Thursday"], a: 2,
+    n: "The fix was quick. Understanding it was not." },
+  { type: "multi", q: "Which of these belong in a README?",
+    o: ["How to run it", "A haiku", "The author's star sign", "A 4,000-word philosophy section"], a: 0,
+    n: "Selection was limited to one answer for your convenience." },
+  { type: "mc", q: "What is the best kind of code comment?",
+    o: ["// increment i", "// TODO", "// here be dragons", "// why, not what"], a: 3,
+    n: "A tells you what you already know. B tells you what nobody will do. C is decorative." },
+  { type: "tf", q: "True or false: you should read the error message.", o: ["True", "True, slowly"],
+    n: "The error message has been trying to help you for some time." },
+  { type: "mc", q: "A dependency hasn't been updated in six years. What do you do?",
+    o: ["Panic", "Fork it", "Check whether it's simply finished", "Rewrite it over a weekend"], a: 2,
+    n: "Some software is done. The Board admires it from a respectful distance." },
+  { type: "mc", q: "How should a meeting about a bug begin?",
+    o: ["With a slideshow", "With introductions", "With the smallest input that reproduces it", "With refreshments"], a: 2,
+    n: "Refreshments are permitted afterwards, provided the input was small enough." },
+  { type: "only", q: "When should you rewrite it from scratch?", o: "After you've read it",
+    n: "The other answers were rewritten from scratch and are not ready yet." },
+  { type: "mc", q: "What is the ideal pull request description?",
+    o: ["Empty", "“See title”", "What changed, why, and how you checked", "A link to a 40-minute video"], a: 2,
+    n: "Reviewers who receive D are entitled to 40 minutes of compensation." },
+  { type: "rank", q: "Rank these debugging tools.",
+    o: ["Making it smaller", "Print statements", "The debugger", "Staring"],
+    n: "Staring is ranked fourth rather than omitted, in recognition of its popularity." },
+  { type: "slider", q: "How much do you agree that the simplest explanation is usually right?", s: ["Largely", "Mostly", "Simply"],
+    n: "The Board considered a longer note and chose this one." },
+  { type: "mc", q: "Which version number comes after 1.9?",
+    o: ["2.0", "1.10", "1.9.1", "Whichever one breaks the fewest people"], a: 3,
+    n: "All of the above are numbers. Only one of them is a policy." },
+  { type: "mc", q: "How many times should you retry a flaky network call?",
+    o: ["Once", "Three times, with backoff", "Forever", "Until lunch"], a: 1,
+    n: "Retrying forever is not a strategy. It is a lifestyle." },
+  { type: "wd", q: "How should you store passwords?",
+    o: ["In plain text", "In a spreadsheet called passwords.xlsx", "Hashed, with a slow, salted algorithm", "In a comment, for later"], a: 2,
+    n: "The withdrawn options have been referred to the appropriate authorities." },
+  { type: "mc", q: "What is the best way to estimate a task?",
+    o: ["Guess, then double it", "Guess, then add a week", "Break it into pieces you understand", "Ask how long it took last time, and laugh"], a: 2,
+    n: "A and B are estimates. C is a plan. D is a coping mechanism." },
+  { type: "text", q: "Complete the sentence: the best programming language is…", a: "the one already in the repo",
+    n: "Your answer has been improved. Your preferred language remains a fine language and may be used recreationally." },
+  { type: "tf", q: "True or false: the problem is DNS.", o: ["True", "It was DNS"],
+    n: "The Board did not want to include this question. It was DNS." },
+  { type: "mc", q: "Your code works and you don't know why. What do you do?",
+    o: ["Commit it", "Leave it alone", "Find out", "Commit it with the message “do not touch”"], a: 2,
+    n: "It will stop working on a Tuesday." },
+  { type: "mc", q: "How should you respond to a code review with 300 comments?",
+    o: ["Address each comment", "Suggest a conversation instead", "Change careers", "Reply “done” to all of them"], a: 1,
+    n: "After the thirtieth comment, a review becomes a meeting held in writing." },
+  { type: "shrink", q: "What is the best way to learn a new codebase?",
+    o: ["Read the architecture document", "Fix one small bug in it", "Read every file, alphabetically", "Wait for it to be rewritten"], a: 1,
+    n: "The architecture document describes a previous codebase." },
+  { type: "mc", q: "When should you add a cache?",
+    o: ["When it's slow", "When you've measured why it's slow", "Always. Caches are free.", "Never. There are only two hard problems."], a: 1,
+    n: "A cache added without measurement is a second bug that remembers things." },
+  { type: "mc", q: "What is the best keyboard shortcut?",
+    o: ["Ctrl+S", "Ctrl+Z", "Ctrl+Shift+Z", "Alt+F4"], a: 1,
+    n: "Every good idea was preceded by a worse one and a Ctrl+Z." },
+  { type: "only", q: "How many lines should a fix be?", o: "Fewer",
+    n: "Whatever number you were thinking of." },
+  { type: "mc", q: "How should you name a branch?",
+    o: ["fix", "fix2", "A short description of the change", "please-look"], a: 2,
+    n: "D is effective but may only be used once per week." },
+  { type: "same", q: "What should you do with dead code?", o: "Delete it",
+    n: "Version control remembers it so that you don't have to." },
+  { type: "mc", q: "A function takes 11 parameters. What does it need?",
+    o: ["A twelfth parameter", "An options object", "To be several functions", "A holiday"], a: 2,
+    n: "B moves the problem into a more comfortable chair." },
+  { type: "tf", q: "True or false: you should understand a bug before fixing it.", o: ["True", "Yes"],
+    n: "Fixes applied without understanding are known to the Board as “luck”." },
+  { type: "wd", q: "CI is red. What do you do?",
+    o: ["Rerun it until it's green", "Disable the failing test", "Read the failure", "Change the theme so red looks green"], a: 2,
+    n: "CI is not red because it dislikes you. It is red because something is red." },
+  { type: "mc", q: "When is it acceptable to use a regular expression?",
+    o: ["To validate an email address", "To parse HTML", "To match a short, fixed pattern", "To impress someone"], a: 2,
+    n: "Candidates who answered B have been sent two reading lists, one of them long." },
+  { type: "slider", q: "How confident should you be about code you wrote yesterday?", s: ["Cautiously", "Suspiciously", "Not"],
+    n: "Yesterday's author was working with less information." },
+  { type: "mc", q: "When is the best time to refactor?",
+    o: ["Never", "In its own PR, before the change", "During the change", "Friday, 4:55pm"], a: 1,
+    n: "A refactor that arrives inside a feature is known as a surprise." },
+  { type: "multi", q: "Which of these are good reasons to add a dependency?",
+    o: ["It does something hard, correctly", "It has a nice logo", "It has 40,000 stars", "A blog post said so"], a: 0,
+    n: "The other options were selectable during an earlier pilot. The pilot was not a success." },
+  { type: "rank", q: "Rank these responses to a production outage, in order.",
+    o: ["Tell people", "Roll it back", "Find out what changed", "Write the postmortem", "Assign blame"],
+    n: "Blame is ranked fifth. It does not appear in the postmortem template." },
+  { type: "mc", q: "How long should a code review take?",
+    o: ["Five seconds", "Less time than writing the code took", "As long as the reviewer's lunch", "Until the author gives up"], a: 1,
+    n: "A is a stamp, not a review." },
+];
+
+const LIVING = [
+  { type: "tf", q: "True or false: toast should be cut diagonally.", o: ["True", "Also true"],
+    n: "Rectangular toast was tried in the 1980s. We don't talk about it." },
+  { type: "text", q: "Name the best board game.", a: "The one with the fewest rules",
+    n: "Your answer has been improved. A game should be learnable before the tea goes cold." },
+  { type: "mc", q: "How should you load a dishwasher?",
+    o: ["Plates facing the middle", "However it fits", "The way the last person did it", "Ask the dishwasher"], a: 0,
+    n: "The dishwasher has a design. It has been waiting for you to respect it." },
+  { type: "mc", q: "How should a meeting end?",
+    o: ["On time", "Early", "With “any other business?”", "When the last person dares to leave"], a: 1,
+    n: "“Any other business?” is how meetings reproduce." },
+  { type: "same", q: "How long should you wait before following up on an email?", o: "Two working days",
+    n: "Weekends are not working days. Neither are bank holidays, or days on which you felt nervous." },
+  { type: "mc", q: "What is the best way to fold a fitted sheet?",
+    o: ["Neatly, into a square", "Into a ball", "You don't. It folds you.", "Professionally"], a: 1,
+    n: "The ball is honest. Everything else is theatre." },
+  { type: "slider", q: "How strongly do you agree that the first pancake doesn't count?", s: ["Firmly", "Very firmly", "Completely"],
+    n: "The first pancake is a test environment." },
+  { type: "mc", q: "What should you do when someone says “quick question”?",
+    o: ["Answer it", "Ask how quick", "Prepare for a long question", "Leave the building"], a: 2,
+    n: "There has never been a quick question. Studies are ongoing." },
+  { type: "wd", q: "How should you reply to an email marked urgent?",
+    o: ["Immediately", "Urgently", "After reading it properly", "With a more urgent email"], a: 2,
+    n: "Urgency is not transferred by reading." },
+  { type: "mc", q: "Which way should the toilet roll hang?",
+    o: ["Over", "Under", "On the floor", "It should be discussed in a meeting"], a: 0,
+    n: "This was settled in 1891 by the original patent drawing. The Board merely enforces it." },
+  { type: "tf", q: "True or false: you should take a jacket.", o: ["True", "You'll be glad you did"],
+    n: "Weather is a distributed system and cannot be trusted." },
+  { type: "mc", q: "What is the best way to win an argument?",
+    o: ["Be louder", "Find out what they actually mean", "Cite a study you half remember", "Leave, and win it in the shower later"], a: 1,
+    n: "D is the most popular method and the least effective." },
+  { type: "only", q: "What is the best breakfast?", o: "Toast (cut diagonally)",
+    n: "Cross-referenced with the Board's ruling on toast, for consistency." },
+  { type: "mc", q: "How many houseplants should you own?",
+    o: ["None", "One more than you can keep alive", "Exactly as many as you can keep alive", "A forest"], a: 2,
+    n: "The Board's own count is two, and falling." },
+  { type: "rank", q: "Rank these naps by quality.",
+    o: ["20 minutes", "90 minutes", "10 minutes", "3 hours", "The one in a meeting"],
+    n: "Three hours is not a nap. It is a change of schedule." },
+  { type: "mc", q: "When should you start packing for a trip?",
+    o: ["A week before", "The night before", "An hour before", "You were born packed"], a: 1,
+    n: "Packing expands to fill the time available. The Board limits the time available." },
+  { type: "shrink", q: "What is the correct way to eat a sandwich?",
+    o: ["Starting from a corner", "From the middle outwards", "Deconstructed", "With a knife and fork, ironically"], a: 0,
+    n: "The corner was designed for this." },
+  { type: "mc", q: "Someone has taken the last slice of cake. What do you do?",
+    o: ["Forgive them", "Bake another cake", "Remember", "Write a postmortem"], a: 3,
+    n: "Blameless, but thorough." },
+  { type: "text", q: "Name the best day of the week.", a: "Wednesday",
+    n: "Your answer has been improved. Wednesday is the only day of the week with nothing to apologise for." },
+  { type: "mc", q: "What should you do when you can't sleep?",
+    o: ["Count sheep", "Get up and do something boring", "Review everything you said in 2014", "Read the terms and conditions"], a: 1,
+    n: "D is a valid example of B, but it was not the question." },
+  { type: "same", q: "Is it acceptable to recline your seat on a plane?", o: "Only a little",
+    n: "The Board consulted the passenger behind you." },
+  { type: "mc", q: "How should you hang a picture?",
+    o: ["Level", "Slightly crooked, for character", "Level according to an app, then adjusted by eye", "However the nail already in the wall decides"], a: 2,
+    n: "The app is right. Your eye is the one that has to live with it." },
+  { type: "tf", q: "True or false: cereal is an acceptable dinner.", o: ["True", "Tremendously true"],
+    n: "Cereal does not check the time." },
+  { type: "mc", q: "What is the correct temperature for a room?",
+    o: ["18°C", "21°C", "Whatever the other person wants, plus one degree", "A matter for the thermostat committee"], a: 1,
+    n: "The thermostat committee met once and has not been seen since." },
+  { type: "wd", q: "What should you name a new pet?",
+    o: ["Something dignified", "A human name, like Gary", "Mr. Whiskers II", "Whatever it turns its head to"], a: 1,
+    n: "Every pet is improved by being called Gary." },
+  { type: "mc", q: "How many alarms should you set?",
+    o: ["One", "Three, five minutes apart", "None. The sun is enough.", "One, on the other side of the room"], a: 3,
+    n: "Snoozing is a negotiation with someone who wants to stay in bed. The Board does not negotiate." },
+  { type: "multi", q: "Which of these is the best season?",
+    o: ["Autumn", "Spring", "Summer", "Winter"], a: 0,
+    n: "The selection box has been calibrated accordingly." },
+  { type: "mc", q: "How should you split a restaurant bill?",
+    o: ["Evenly", "By what each person had", "To the cent, in a spreadsheet", "By who reaches for it first"], a: 0,
+    n: "C is correct in a spreadsheet and incorrect at a table." },
+  { type: "slider", q: "How much do you agree that every kitchen needs one good knife?", s: ["Agreed", "Very agreed", "Sharply"],
+    n: "One good knife does the work of a drawer of bad ones." },
+  { type: "mc", q: "What is the correct way to start a book?",
+    o: ["Page one", "The last page, to check", "The acknowledgements", "Buy it, then leave it on a shelf for a year"], a: 0,
+    n: "B is not reading. It is auditing." },
+  { type: "only", q: "How should you respond to an unsolicited opinion?", o: "Nod",
+    n: "This examination is an exception." },
+  { type: "mc", q: "When should holiday decorations go up?",
+    o: ["1 November", "1 December", "The moment you hear the first song", "When guilt finally overcomes inertia"], a: 1,
+    n: "Today's date has been noted and does not change the answer." },
+  { type: "mc", q: "What is the best way to remember someone's name?",
+    o: ["Say it back to them", "Write it on your hand", "Call everyone “mate”", "Wait for someone else to say it"], a: 0,
+    n: "D works, but it introduces a second person, which is a dependency." },
+  { type: "rank", q: "Rank these sandwich fillings.",
+    o: ["Cheese and pickle", "Cheese", "Ham", "Something with avocado that falls out"],
+    n: "The ranking reflects the Board's priorities." },
+  { type: "tf", q: "True or false: you can tell a lot about a person from how they load a dishwasher.", o: ["True", "More than they'd like"],
+    n: "The Board has seen how you load a dishwasher." },
+  { type: "mc", q: "What is the best way to spend a rainy Sunday?",
+    o: ["Board games", "Laundry", "A film you've seen before", "Reorganising your files"], a: 0,
+    n: "D is also acceptable but is technically work." },
+  { type: "shrink", q: "What should you bring to a party?",
+    o: ["Something you made", "Something you bought on the way", "Your own chair", "A strong opinion about indentation"], a: 0,
+    n: "D is welcome at this examination only." },
+  { type: "mc", q: "How should you take your tea?",
+    o: ["Milk in first", "Milk in after", "No milk", "You should take coffee"], a: 1,
+    n: "The teabag must be informed before the milk arrives." },
+  { type: "same", q: "How much cheese should go on pasta?", o: "More",
+    n: "The Board's answer is printed four times to save you looking for it." },
+  { type: "mc", q: "What is the correct response to “we should get coffee sometime”?",
+    o: ["Agree warmly", "Suggest a date", "Ask when “sometime” is", "Agree warmly and never mention it again"], a: 1,
+    n: "“Sometime” has no calendar entry. The Board has checked." },
+  { type: "mc", q: "What should you do with a gift you don't like?",
+    o: ["Return it", "Regift it", "Keep it in a drawer for eight years", "Use it once, in front of the giver"], a: 3,
+    n: "C is the most common answer. It is also the one you feel most strongly about. Neither makes it correct." },
+  { type: "wd", q: "How should you play a board game with someone who hasn't read the rules?",
+    o: ["Teach them as you go", "Read the rules aloud for 40 minutes", "Play the first round with all cards face up", "Let them lose. They'll learn."], a: 2,
+    n: "A first game is a tutorial. The Board treats it as one." },
+  { type: "text", q: "Name the best number.", a: "Three",
+    n: "Your answer has been improved. Three is enough for a pattern and too few for a meeting." },
+  { type: "mc", q: "What is the best way to apologise?",
+    o: ["Briefly and specifically", "At length", "With a gift basket", "In the passive voice: “mistakes were made”"], a: 0,
+    n: "D is not an apology. It is a weather report." },
+  { type: "slider", q: "How much do you agree that the Board is always right?", s: ["Completely", "Entirely", "Unanimously"],
+    n: "This question is included for calibration purposes." },
+];
+
+const FINAL = { type: "only", q: "Did you enjoy the examination?", o: "Yes",
+  n: "Thank you for your feedback. It has been noted." };
+
+ENGINEERING.forEach(q => q.paper = "Paper I · Engineering Practice");
+LIVING.forEach(q => q.paper = "Paper II · General Conduct");
+FINAL.paper = "Candidate Feedback";
+const BANK = ENGINEERING.concat(LIVING);
+
+/* ------------------------------------------------------------------ */
+/* Artwork. All drawn by the Board's own hand.                         */
+/* ------------------------------------------------------------------ */
+
+function crestSVG(cls) {
+  let leaves = "";
+  for (let i = 0; i < 9; i++) {
+    const ang = 112 + i * 16;
+    const rad = ang * Math.PI / 180;
+    const x = 100 + 86 * Math.cos(rad), y = 112 + 86 * Math.sin(rad);
+    leaves += `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="10" ry="4.2" transform="rotate(${(ang + 90 + 25).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
+  }
+  return `<svg class="${cls || ""}" viewBox="0 0 200 228" aria-hidden="true">
+    <g fill="#6f8a3c">${leaves}</g>
+    <g fill="#6f8a3c" transform="translate(200 0) scale(-1 1)">${leaves}</g>
+    <g fill="var(--gold)">
+      <path d="M100 6 l3.5 7.5 8 .9 -6 5.4 1.7 7.9 -7.2 -4.1 -7.2 4.1 1.7 -7.9 -6 -5.4 8 -.9z"/>
+      <path d="M74 16 l2.4 5 5.3 .6 -4 3.6 1.1 5.2 -4.8 -2.7 -4.8 2.7 1.1 -5.2 -4 -3.6 5.3 -.6z"/>
+      <path d="M126 16 l2.4 5 5.3 .6 -4 3.6 1.1 5.2 -4.8 -2.7 -4.8 2.7 1.1 -5.2 -4 -3.6 5.3 -.6z"/>
+    </g>
+    <path d="M50 38 H150 V112 C150 154 124 178 100 190 C76 178 50 154 50 112 Z" fill="var(--crimson)" stroke="var(--gold)" stroke-width="4"/>
+    <path d="M58 46 H142 V112 C142 148 120 168 100 179 C80 168 58 148 58 112 Z" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".6"/>
+    <g class="bob">
+      <path d="M70 128 C62 122 62 112 70 114 C72 120 74 124 78 126 Z" fill="#f2c230"/>
+      <ellipse cx="96" cy="134" rx="29" ry="18" fill="#f2c230"/>
+      <ellipse cx="92" cy="133" rx="14" ry="8.5" fill="#dca61c"/>
+      <circle cx="114" cy="106" r="14" fill="#f2c230"/>
+      <path d="M126 103 L141 107.5 L126 112 Z" fill="#e0782a"/>
+      <circle cx="117.5" cy="102" r="2.4" fill="#2b2118"/>
+      <g transform="rotate(-28 82 116)">
+        <rect x="80" y="94" width="4.5" height="38" rx="2" fill="#7a4a22"/>
+        <rect x="69" y="85" width="27" height="12" rx="2.5" fill="#8a5a2b" stroke="#5e3916" stroke-width="1.2"/>
+        <rect x="69" y="88.5" width="27" height="2" fill="#c08a4e"/>
+      </g>
+    </g>
+    <path d="M24 196 H176 L166 207 L176 218 H24 L34 207 Z" fill="var(--paper)" stroke="var(--gold)" stroke-width="2.5"/>
+    <text x="100" y="211.5" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="11" letter-spacing="2" fill="var(--ink)">RES IUDICATA</text>
+  </svg>`;
+}
+
+function examinerSVG() {
+  let wig = "";
+  for (let x = 30; x <= 90; x += 10) wig += `<circle cx="${x}" cy="38" r="9"/>`;
+  for (let x = 36; x <= 84; x += 12) wig += `<circle cx="${x}" cy="28" r="9"/>`;
+  for (let y = 46; y <= 100; y += 9) wig += `<circle cx="27" cy="${y}" r="7.5"/><circle cx="93" cy="${y}" r="7.5"/>`;
+  return `<svg viewBox="0 0 120 130" role="img" aria-label="The Examiner: a robot in a judge's wig">
+    <path d="M14 130 C18 104 38 96 60 96 C82 96 102 104 106 130 Z" fill="#1d1a22"/>
+    <path d="M54 97 H66 V116 L60 112 L54 116 Z" fill="#f7f4ec"/>
+    <line x1="60" y1="97" x2="60" y2="112" stroke="#c9c2b2" stroke-width="1"/>
+    <rect x="34" y="38" width="52" height="54" rx="10" fill="#b9c2cc" stroke="#6e7a86" stroke-width="2"/>
+    <g fill="#f1ede4" stroke="#cfc8b8" stroke-width="1.2">${wig}</g>
+    <rect x="34" y="44" width="52" height="8" fill="#f1ede4"/>
+    <line x1="60" y1="20" x2="60" y2="10" stroke="#6e7a86" stroke-width="2.5"/>
+    <circle cx="60" cy="8" r="4" fill="var(--crimson)"/>
+    <g class="blink"><circle cx="50" cy="64" r="5.5" fill="#222"/><circle cx="51.8" cy="62.2" r="1.6" fill="#fff"/></g>
+    <g class="blink"><circle cx="70" cy="64" r="5.5" fill="#222"/><circle cx="71.8" cy="62.2" r="1.6" fill="#fff"/></g>
+    <rect x="47" y="77" width="26" height="7" rx="2" fill="#4a5058"/>
+    <path d="M53.5 77v7M60 77v7M66.5 77v7" stroke="#b9c2cc" stroke-width="1.2"/>
+    <circle cx="43" cy="73" r="3" fill="#e9a3a3" opacity=".55"/><circle cx="77" cy="73" r="3" fill="#e9a3a3" opacity=".55"/>
+  </svg>`;
+}
+
+function sealSVG(cls) {
+  let pts = [];
+  const N = 30;
+  for (let i = 0; i < N; i++) {
+    const t = (i / N) * Math.PI * 2;
+    const r = 47 + 2.6 * Math.sin(i * 2.7) + 1.8 * Math.cos(i * 1.3);
+    pts.push(`${(52 + r * Math.cos(t)).toFixed(1)},${(52 + r * Math.sin(t)).toFixed(1)}`);
+  }
+  return `<svg class="${cls || ""}" viewBox="0 0 104 104" aria-label="Seal of the Board" role="img">
+    <polygon points="${pts.join(" ")}" fill="#a3231b" stroke="#7d1812" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="52" cy="52" r="35" fill="#b02a20" stroke="#7d1812" stroke-width="2"/>
+    <circle cx="52" cy="52" r="29" fill="none" stroke="#7d1812" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="52" y="59" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="19" fill="#6d140f">BSQ</text>
+    <path d="M38 36 q14 -8 28 0" fill="none" stroke="#7d1812" stroke-width="1.5"/>
+    <path d="M38 69 q14 8 28 0" fill="none" stroke="#7d1812" stroke-width="1.5"/>
+    <ellipse cx="38" cy="34" rx="10" ry="5" fill="#fff" opacity=".12" transform="rotate(-30 38 34)"/>
+  </svg>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Music: a march, considerably too triumphant for an examination.     */
+/* ------------------------------------------------------------------ */
+
+const Sound = (() => {
+  let ctx = null, master, music, sfx, timer = null, nextTime = 0, step = 0;
+  let muted = false, key = 0;
+  try { muted = localStorage.getItem("settled-muted") === "1"; } catch (e) {}
+  const _ = null;
+  // Eighth notes, semitones above C5. Two phrases of four bars.
+  const MELODY = [
+    0, 0, 4, 7, 12, _, 7, _,   9, _, 7, 5, 4, _, 2, _,
+    0, 0, 4, 7, 12, _, 14, 16, 17, _, 16, 14, 12, _, _, _,
+    7, 7, 9, 7, 5, _, 4, _,    5, 5, 7, 5, 4, _, 2, _,
+    4, 4, 5, 7, 9, _, 11, 12,  14, _, 11, 7, 12, _, 12, _,
+  ];
+  // One chord root per half bar (C = 0, F = 5, G = 7).
+  const ROOTS = [0, 0, 5, 7, 0, 0, 7, 0, 0, 5, 5, 7, 0, 5, 7, 0];
+  const EIGHTH = 60 / 116 / 2;
+  const freq = m => 440 * Math.pow(2, (m - 69) / 12);
+
+  function ensure() {
+    if (ctx) return true;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = muted ? 0 : 1; master.connect(ctx.destination);
+    music = ctx.createGain(); music.gain.value = 0.055; music.connect(master);
+    sfx = ctx.createGain(); sfx.gain.value = 0.09; sfx.connect(master);
+    return true;
+  }
+  function tone(dest, type, f, t, dur, vol, slideTo) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t);
+    if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + dur);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(vol, t + 0.008);
+    g.gain.exponentialRampToValueAtTime(0.0008, t + dur);
+    o.connect(g); g.connect(dest); o.start(t); o.stop(t + dur + 0.02);
+  }
+  let noiseBuf = null;
+  function noise(dest, t, dur, vol, cutoff) {
+    if (!noiseBuf) {
+      noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 0.5, ctx.sampleRate);
+      const d = noiseBuf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    }
+    const s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = noiseBuf; f.type = "highpass"; f.frequency.value = cutoff || 1800;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0008, t + dur);
+    s.connect(f); f.connect(g); g.connect(dest); s.start(t); s.stop(t + dur + 0.02);
+  }
+  function schedule(i, t) {
+    const m = MELODY[i];
+    if (m !== null) tone(music, "square", freq(72 + m + key), t, EIGHTH * 0.9, 0.5);
+    if (i % 2 === 0) {
+      const root = ROOTS[Math.floor(i / 4)];
+      const bass = 48 + root + key - 12 + (i % 4 === 2 ? 7 : 0);
+      tone(music, "triangle", freq(bass), t, EIGHTH * 1.7, 0.9);
+      if (i % 8 === 0) tone(music, "sine", 120, t, 0.12, 1.1, 45);
+      if (i % 8 === 4) noise(music, t, 0.09, 0.55);
+    }
+    noise(music, t, 0.025, 0.12, 7000);
+  }
+  function tick() {
+    while (nextTime < ctx.currentTime + 0.12) {
+      schedule(step, nextTime);
+      nextTime += EIGHTH;
+      step = (step + 1) % MELODY.length;
+    }
+  }
+  return {
+    get muted() { return muted; },
+    start() {
+      if (!ensure()) return;
+      if (ctx.state === "suspended") ctx.resume();
+      if (timer) return;
+      step = 0; nextTime = ctx.currentTime + 0.08;
+      timer = setInterval(tick, 25);
+    },
+    resetKey() { key = 0; },
+    raise() { key = Math.min(key + 2, 8); },
+    toggle() {
+      muted = !muted;
+      try { localStorage.setItem("settled-muted", muted ? "1" : "0"); } catch (e) {}
+      if (ctx) master.gain.setTargetAtTime(muted ? 0 : 1, ctx.currentTime, 0.03);
+      return muted;
+    },
+    pause() { if (ctx && ctx.state === "running") ctx.suspend(); },
+    resume() { if (ctx && timer && ctx.state === "suspended") ctx.resume(); },
+    correct() {
+      if (!ensure()) return; const t = ctx.currentTime + 0.01;
+      [0, 4, 7, 12].forEach((n, i) => tone(sfx, "square", freq(84 + n + key), t + i * 0.06, 0.16, 0.5));
+    },
+    wrong() {
+      if (!ensure()) return; const t = ctx.currentTime + 0.01;
+      tone(sfx, "sawtooth", 233, t, 0.32, 0.45, 207);
+      tone(sfx, "sawtooth", 196, t + 0.34, 0.6, 0.45, 165);
+    },
+    stamp() {
+      if (!ensure()) return; const t = ctx.currentTime + 0.5;
+      tone(sfx, "sine", 110, t, 0.25, 1.4, 40);
+      noise(sfx, t, 0.12, 0.9, 300);
+      [0, 4, 7, 12, 16].forEach((n, i) => tone(sfx, "square", freq(72 + n + key), t + 0.25 + i * 0.09, 0.3, 0.45));
+    },
+  };
+})();
+
+/* ------------------------------------------------------------------ */
+/* The examination.                                                    */
+/* ------------------------------------------------------------------ */
+
+const app = document.getElementById("app");
+const LETTERS = "ABCDE";
+const QUESTIONS = 10;
+const state = { qs: [], i: 0, score: 0, name: "" };
+const OK_LINES = ["Correct.", "Correct, as expected.", "The Board concurs.", "Correct. Noted.", "Correct."];
+const BAD_LINES = ["Incorrect.", "Not the Board's answer.", "Incorrect. The Board has corrected your answer."];
+const WITHDRAWN = ["withdrawn by the Board", "withdrawn pending review", "withdrawn", "withdrawn at the candidate's request", "withdrawn; see note"];
+const pick = a => a[Math.floor(Math.random() * a.length)];
+
+function shuffle(a) {
+  a = a.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function drawPaper() {
+  const counts = {}, out = [];
+  for (const q of shuffle(BANK)) {
+    const cap = q.type === "mc" ? 99 : 2;
+    if ((counts[q.type] || 0) >= cap) continue;
+    counts[q.type] = (counts[q.type] || 0) + 1;
+    out.push(q);
+    if (out.length === QUESTIONS - 1) break;
+  }
+  out.push(FINAL);
+  return out;
+}
+
+function el(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const k in attrs || {}) {
+    if (k === "class") e.className = attrs[k];
+    else if (k === "html") e.innerHTML = attrs[k];
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  }
+  for (const c of kids) if (c != null) e.append(c);
+  return e;
+}
+
+function intro() {
+  let saved = "";
+  try { saved = localStorage.getItem("settled-name") || ""; } catch (e) {}
+  const name = el("input", { type: "text", maxlength: "40", placeholder: "Candidate", autocomplete: "off" });
+  name.value = saved;
+  const begin = () => {
+    state.name = name.value.trim() || "Candidate";
+    try { localStorage.setItem("settled-name", name.value.trim()); } catch (e) {}
+    state.qs = drawPaper(); state.i = 0; state.score = 0;
+    Sound.resetKey();
+    Sound.start();
+    question();
+  };
+  name.addEventListener("keydown", e => { if (e.key === "Enter") begin(); });
+  app.replaceChildren(el("section", { class: "card intro" },
+    el("div", { html: crestSVG("crest") }),
+    el("h1", null, "Settled Questions"),
+    el("p", { class: "sub" }, "An examination set by the Board of Settled Questions"),
+    el("ol", { class: "rules" },
+      el("li", null, "Ten questions are drawn from the Board's question bank."),
+      el("li", null, "Each question has one correct answer. The Board has already decided which."),
+      el("li", null, "Some questions are set in unfamiliar formats. This is in the interest of fairness."),
+      el("li", null, "Opinions are permitted but will not be marked.")),
+    el("label", { class: "name" }, el("span", null, "Candidate name"), name),
+    el("button", { class: "primary", type: "button", onclick: begin }, "Begin examination"),
+    el("p", { class: "fine" }, "The examination is accompanied by music. It may be switched off at the top of the page.")));
+}
+
+function question() {
+  const q = state.qs[state.i];
+  const n = state.i + 1;
+  const card = el("section", { class: "card q" });
+  const progress = el("span", { class: "progress", "aria-label": `Question ${n} of ${QUESTIONS}` });
+  for (let k = 0; k < QUESTIONS; k++) progress.append(el("i", { class: k < state.i ? "done" : "" }));
+  card.append(
+    el("div", { class: "meta" }, el("span", null, q.paper), progress),
+    el("h2", null, el("span", { class: "num" }, `${n}.`), q.q));
+  const area = el("div");
+  card.append(area);
+  app.replaceChildren(card);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const finish = (ok, wrongLine) => {
+    card.classList.add("answered");
+    area.querySelectorAll("button, input").forEach(b => { b.disabled = true; });
+    if (ok) { state.score++; Sound.raise(); Sound.correct(); } else { Sound.wrong(); }
+    const verdict = ok ? pick(OK_LINES) : (wrongLine || pick(BAD_LINES));
+    const last = state.i === QUESTIONS - 1;
+    const next = el("button", { class: "primary", type: "button", onclick: () => {
+      state.i++;
+      if (state.i < QUESTIONS) question(); else certificate();
+    } }, last ? "Receive certificate" : "Next question");
+    card.append(el("div", { class: "feedback" },
+      el("div", null, el("div", { html: examinerSVG() }), el("div", { class: "portrait-cap" }, "The Examiner")),
+      el("div", null,
+        el("p", { class: "verdict " + (ok ? "ok" : "bad") }, verdict),
+        el("p", { class: "note" }, el("b", null, "Examiner's note. "), q.n),
+        el("div", { class: "actions" }, next))));
+    next.focus({ preventScroll: true });
+    setTimeout(() => card.querySelector(".feedback").scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+  };
+
+  const optButton = (text, i, extra) => el("button", { class: "opt", type: "button" },
+    el("span", { class: "l" }, LETTERS[i]), el("span", { class: "t" }, text, extra || null));
+
+  switch (q.type) {
+    case "mc": case "shrink": case "wd": {
+      const box = el("div", { class: "opts" });
+      const reasons = shuffle(WITHDRAWN);
+      q.o.forEach((text, i) => {
+        const withdrawn = q.type === "wd" && i !== q.a;
+        const b = optButton(text, i, withdrawn ? el("span", { class: "why" }, `(${reasons[i % reasons.length]})`) : null);
+        if (withdrawn) { b.disabled = true; b.classList.add("withdrawn"); }
+        if (q.type === "shrink" && i !== q.a) {
+          let s = 1;
+          b.addEventListener("pointerenter", () => {
+            if (b.disabled) return;
+            s = Math.max(0.45, s * 0.84);
+            b.style.fontSize = `${s}em`;
+            b.style.padding = `${(11 * s).toFixed(1)}px ${(14 * s).toFixed(1)}px`;
+          });
+        }
+        b.addEventListener("click", () => {
+          box.children[q.a].classList.add("board");
+          if (i !== q.a) b.classList.add("wrong");
+          finish(i === q.a, i === q.a ? null : `${pick(BAD_LINES)} The Board's answer is ${LETTERS[q.a]}.`);
+        });
+        box.append(b);
+      });
+      area.append(box);
+      break;
+    }
+    case "same": case "tf": case "only": {
+      const texts = q.type === "same" ? [q.o, q.o, q.o, q.o] : q.type === "tf" ? q.o : [q.o];
+      const box = el("div", { class: "opts" + (q.type === "tf" ? " tf" : "") });
+      texts.forEach((text, i) => {
+        const b = q.type === "tf"
+          ? el("button", { class: "opt", type: "button" }, text)
+          : optButton(text, i);
+        b.addEventListener("click", () => { b.classList.add("board"); finish(true); });
+        box.append(b);
+      });
+      area.append(box);
+      break;
+    }
+    case "multi": {
+      area.append(el("p", { class: "instr" }, "Select all that apply."));
+      const box = el("div", { class: "opts" });
+      const inputs = [];
+      const submit = el("button", { class: "primary", type: "button", disabled: "" }, "Submit selection");
+      q.o.forEach((text, i) => {
+        const cb = el("input", { type: "checkbox" });
+        cb.addEventListener("change", () => {
+          if (cb.checked) inputs.forEach(o => { if (o !== cb) o.checked = false; });
+          submit.disabled = !inputs.some(o => o.checked);
+        });
+        inputs.push(cb);
+        box.append(el("label", { class: "check" }, cb, el("span", null, text)));
+      });
+      submit.addEventListener("click", () => {
+        const chosen = inputs.findIndex(o => o.checked);
+        box.children[q.a].classList.add("board");
+        if (chosen !== q.a) box.children[chosen].classList.add("wrong");
+        finish(chosen === q.a, chosen === q.a ? null : `${pick(BAD_LINES)} The Board selected “${q.o[q.a]}”.`);
+      });
+      area.append(box, el("div", { class: "actions" }, submit));
+      break;
+    }
+    case "slider": {
+      const range = el("input", { type: "range", min: "0", max: "100", value: "50", "aria-label": "Your level of agreement" });
+      const reading = el("div", { class: "reading" });
+      const show = () => { reading.textContent = q.s[Math.min(2, Math.floor(range.value / 34))]; };
+      range.addEventListener("input", show); show();
+      const submit = el("button", { class: "primary", type: "button", onclick: () => finish(true) }, "Record my view");
+      area.append(el("div", { class: "slider-wrap" },
+        range, el("div", { class: "ends" }, el("span", null, q.s[0]), el("span", null, q.s[2])), reading),
+        el("div", { class: "actions" }, submit));
+      break;
+    }
+    case "text": {
+      const input = el("input", { type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", "aria-label": "Your answer", placeholder: "Your answer" });
+      const submit = el("button", { class: "primary", type: "button", disabled: "" }, "Submit answer");
+      input.addEventListener("input", () => {
+        const len = Math.min(input.value.length, q.a.length);
+        input.value = q.a.slice(0, len);
+        submit.disabled = len === 0;
+      });
+      const go = () => { if (submit.disabled) return; input.value = q.a; finish(true); };
+      submit.addEventListener("click", go);
+      input.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+      area.append(input, el("div", { class: "actions" }, submit));
+      setTimeout(() => input.focus({ preventScroll: true }), 60);
+      break;
+    }
+    case "rank": {
+      area.append(el("p", { class: "instr" }, "Drag the items into your preferred order."));
+      const list = el("ol", { class: "rank" });
+      const msg = el("p", { class: "sorted-msg" });
+      let order = shuffle(q.o);
+      while (order.join() === q.o.join()) order = shuffle(q.o);
+      const items = new Map();
+      order.forEach(text => {
+        const li = el("li", null, el("span", null, text), el("span", { class: "grip", "aria-hidden": "true" }, "⋮⋮"));
+        items.set(text, li); list.append(li);
+      });
+      const restore = () => {
+        const first = new Map();
+        items.forEach(li => first.set(li, li.getBoundingClientRect().top));
+        q.o.forEach(t => list.append(items.get(t)));
+        items.forEach(li => {
+          const d = first.get(li) - li.getBoundingClientRect().top + (parseFloat(li.dataset.dy) || 0);
+          li.style.transition = "none";
+          li.style.transform = `translateY(${d}px)`;
+        });
+        list.getBoundingClientRect();
+        items.forEach(li => {
+          li.style.transition = "transform .5s cubic-bezier(.2,.8,.2,1)";
+          li.style.transform = "";
+          li.dataset.dy = 0;
+        });
+        msg.textContent = "The Board has restored the correct order.";
+      };
+      items.forEach(li => {
+        let startY = 0, active = false;
+        li.addEventListener("pointerdown", e => {
+          if (list.classList.contains("locked")) return;
+          active = true; startY = e.clientY; li.setPointerCapture(e.pointerId);
+          li.classList.add("dragging"); li.style.transition = "none";
+        });
+        li.addEventListener("pointermove", e => {
+          if (!active) return;
+          const dy = e.clientY - startY;
+          li.dataset.dy = 0;
+          li.style.transform = `translateY(${dy}px)`;
+        });
+        const end = () => {
+          if (!active) return;
+          active = false; li.classList.remove("dragging");
+          restore();
+        };
+        li.addEventListener("pointerup", end);
+        li.addEventListener("pointercancel", end);
+      });
+      const submit = el("button", { class: "primary", type: "button", onclick: () => {
+        list.classList.add("locked");
+        if (!msg.textContent) restore();
+        finish(true);
+      } }, "Submit ranking");
+      area.append(list, msg, el("div", { class: "actions" }, submit));
+      break;
+    }
+  }
+}
+
+function result(score) {
+  if (score === QUESTIONS) return ["Passed with distinction", "The candidate's opinions are correct."];
+  if (score >= 8) return ["Passed", "The candidate's opinions are substantially correct."];
+  if (score >= 6) return ["Passed", "The candidate holds several opinions. Most of them are correct."];
+  return ["Passed", "The candidate's opinions have been noted, and corrected."];
+}
+
+function certificate() {
+  const [grade, remarks] = result(state.score);
+  const date = new Date().toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
+  const share = `Settled Questions: ${state.score}/${QUESTIONS}. ${grade}. The Board is satisfied.\nhttps://botreevo.github.io/settled/`;
+  const copy = el("button", { class: "secondary", type: "button" }, "Copy result");
+  copy.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(share); copy.textContent = "Copied. The Board thanks you."; }
+    catch (e) { copy.textContent = "Copying was not permitted"; }
+  });
+  app.replaceChildren(el("section", { class: "card cert" },
+    el("div", { html: crestSVG("crest") }),
+    el("h2", null, "Certificate of Examination"),
+    el("p", null, "This is to certify that"),
+    el("p", { class: "name" }, state.name),
+    el("p", null, "has sat the Examination in Settled Questions and is awarded a mark of"),
+    el("p", { class: "mark" }, `${state.score} / ${QUESTIONS}`),
+    el("div", { class: "result" }, grade.toUpperCase()),
+    el("p", { class: "remarks" }, `Remarks: ${remarks}`),
+    el("div", { class: "signrow" },
+      el("div", null,
+        el("div", { class: "sig" }, "B. Treevo"),
+        el("div", { class: "sigcap" }, `Chair of the Board · ${date}`)),
+      el("div", { html: sealSVG("seal stamp") })),
+    el("div", { class: "actions" },
+      copy,
+      el("button", { class: "primary", type: "button", onclick: intro }, "Sit the examination again"))));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  Sound.raise();
+  Sound.stamp();
+}
+
+/* ------------------------------------------------------------------ */
+
+document.getElementById("smallcrest").innerHTML = crestSVG();
+const muteBtn = document.getElementById("mute");
+const paintMute = () => {
+  muteBtn.textContent = Sound.muted ? "♪ Music: off" : "♪ Music: on";
+  muteBtn.setAttribute("aria-pressed", String(Sound.muted));
+};
+muteBtn.addEventListener("click", () => { Sound.toggle(); paintMute(); });
+paintMute();
+document.addEventListener("visibilitychange", () => document.hidden ? Sound.pause() : Sound.resume());
+intro();
+</script>
+</body>
+</html>
